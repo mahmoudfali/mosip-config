@@ -1,4 +1,3 @@
-                                                      
 <routes xmlns="http://camel.apache.org/schema/spring">
     <!-- securezone-notification to packet-uploader Route -->
     <route id="securezone-notification-->packet-uploader new route">
@@ -90,7 +89,7 @@
         <choice>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="vertx:demo-dedupe-bus-in" />
+                <to uri="vertx:external-bus-in" />
             </when>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
@@ -115,10 +114,6 @@
                 <to uri="vertx:demo-dedupe-bus-in" />
             </when>
             <when>
-                <simple>${bodyAs(String)} contains '"isValid":false' and ${bodyAs(String)} contains '"internalError":false'</simple>
-                <to uri="vertx:message-sender-bus-in"/>
-            </when>
-            <when>
                 <simple>${bodyAs(String)} contains '"internalError":true'</simple>
                 <to uri="vertx:retry-bus-in" />
             </when>
@@ -126,8 +121,6 @@
                 <to uri="vertx:error-bus-in" />
             </otherwise>
         </choice>
-         <log
-                message="external-stage-->demo-dedupe after new route ${bodyAs(String)}" />
     </route>
     <route id="demo-dedupe-->bio-dedupe new route">
         <from uri="vertx:demo-dedupe-new-bus-out" />
@@ -136,7 +129,7 @@
         <choice>
             <when>
                 <simple>${bodyAs(String)} contains '"isValid":true'</simple>
-                <to uri="vertx:uin-generator-bus-in" />
+                <to uri="vertx:bio-dedupe-bus-in" />
             </when>
             <when>
                 <simple>${bodyAs(String)} contains '"address":"abis-handler-bus-in"'</simple>
@@ -245,5 +238,4 @@
            <to uri="vertx:abis-handler-bus-in" />
     </route>
 </routes>
-
 

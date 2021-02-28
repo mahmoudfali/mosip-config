@@ -16,7 +16,7 @@
       "validators": [
         {
           "type": "regex",
-          "validator": "^[a-zA-Z\u0621-\u064A\u0660-\u0669 ]{2,47}$",
+          "validator": "^[a-zA-Z\u0621-\u064A\u0660-\u0669 ]{3,47}$",
           "arguments": []
         }
       ],
@@ -40,7 +40,7 @@
       "validators": [
         {
           "type": "regex",
-          "validator":  "^[a-zA-Z\u0621-\u064A\u0660-\u0669 ]{2,47}$",
+          "validator":  "^[a-zA-Z\u0621-\u064A\u0660-\u0669 ]{3,47}$",
           "arguments": []
         }
       ],
@@ -107,6 +107,24 @@
           "preview": true
     },
     {
+      "id": "placeOfBirth",
+      "description": "Lieu de naissance",
+      "labelName": {
+        "fra": "Lieu de naissance",
+        "ara": "مكان الإزدياد",
+        "eng": "Lieu de naissance"
+      },
+      "controlType": "dropdown",
+      "inputRequired": true,
+      "fieldType": "dynamic",
+      "type": "simpleType",
+      "validators": [],
+      "required": true,
+      "visible": true ,
+          "group" : "personal_info" ,
+          "preview": true
+    },
+    {
       "id": "nationality",
       "description": "nationalité",
       "labelName": {
@@ -124,62 +142,6 @@
           "group" : "personal_info" ,
           "preview": true
     },
-	{
-	  "id": "flagPlaceOfBirth",
-    "description": "Je suis nés au maroc",
-    "labelName": {
-        "fra": "Je suis nés au maroc",
-        "ara": "ولدت في المغرب",
-        "eng": "Je suis nés au maroc"
-    },
-    "controlType": "dropdown",
-    "subtype": "radio",
-    "inputRequired": true,
-    "fieldType": "dynamic",
-    "type": "simpleType",
-    "validators": [],
-    "required": true,
-    "visible": true,
-    "group": "personal_info",
-    "preview": true
-    },
-	{
-      "id": "placeOfBirth",
-      "description": "Lieu de naissance",
-      "labelName": {
-        "fra": "Lieu de naissance",
-        "ara": "مكان الإزدياد",
-        "eng": "Lieu de naissance"
-      },
-      "controlType": "dropdown",
-      "inputRequired": true,
-      "fieldType": "dynamic",
-      "type": "simpleType",
-      "validators": [],
-      "required": true,
-      "visible": false ,
-          "group" : "personal_info" ,
-          "preview": true
-    },
-	{
-	  "id": "countries",
-	  "description": "Pay de naissance",
-	  "labelName": {
-		"fra": "Pay de naissance",
-		"ara": "بلد الإزدياد",
-		"eng": "Pay de naissance"
-	  },
-	  "controlType": "dropdown",
-	  "inputRequired": true,
-	  "fieldType": "dynamic",
-	  "type": "simpleType",
-	  "validators": [],
-	  "required": true,
-	  "visible": false ,
-		  "group" : "personal_info" ,
-		  "preview": true
-    },
-	
     {
       "id": "addressLine1",
       "description": "Adresse de résidence",
@@ -372,7 +334,7 @@
     "description": "Je dispose d'un IDCS",
     "labelName": {
         "fra": "Je dispose d'un IDCS",
-        "ara": "أملك المدني والإجتماعي الرقمي",
+        "ara": "أملك شهادة الميلاد الرقميه",
         "eng": "Je dispose d'un IDCS"
     },
     "controlType": "dropdown",
@@ -493,7 +455,7 @@
       "validators": [
                         {
           "type": "regex",
-          "validator":  "^[a-zA-Z\u0621-\u064A\u0660-\u0669 ]{2,47}$",
+          "validator":  "^[a-zA-Z\u0621-\u064A\u0660-\u0669 ]{3,47}$",
           "arguments": []
                         }
           ],
@@ -517,7 +479,7 @@
       "validators": [
                         {
           "type": "regex",
-          "validator":  "^[a-zA-Z\u0621-\u064A\u0660-\u0669 ]{2,47}$",
+          "validator":  "^[a-zA-Z\u0621-\u064A\u0660-\u0669 ]{3,47}$",
           "arguments": []
                         }
           ],
@@ -680,12 +642,6 @@
     {
       "required": true,
       "residenceStatus": "NFR"
-    }
-  ],
-  "placeOfBirthConditionsToShow": [
-    {
-      "required": true,
-      "flagPlaceOfBirth": "10"
     }
   ],
   "civilRegistryNumberConditionsToShow": [
