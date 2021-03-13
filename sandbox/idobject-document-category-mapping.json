@@ -1,6 +1,6 @@
 {
 	"identity": {
-		"fullName": {
+		"lastName": {
 			"documentCategory": "proofOfIdentity"
 		},
 		"parentOrGuardianRID": {
